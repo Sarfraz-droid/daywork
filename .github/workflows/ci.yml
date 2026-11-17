@@ -1,0 +1,22 @@
+name: Check app and website
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test storage and undo
+        run: swift test
+      - name: Build download
+        run: ./scripts/package-release.sh
+      - name: Check website and download
+        run: python3 scripts/check-site.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Daymark-macOS-arm64
+          path: release/Daymark-macOS-arm64.zip

@@ -1,0 +1,9 @@
+.DS_Store
+.build/
+.swiftpm/
+*.app/
+release/
+node_modules/
+.vercel/
+.env
+.env.*
