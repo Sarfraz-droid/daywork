@@ -4,13 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="A small task board that lives in your Mac menu bar. Capture a thought, focus on one thing, and make room for your day. Download Daymark for macOS.">
-  <meta name="theme-color" content="#f5f4ee">
-  <meta property="og:title" content="Daymark — A little less on your mind.">
+  <meta name="theme-color" content="#f6f8f6">
+  <meta property="og:title" content="Daymark | A little less on your mind.">
   <meta property="og:description" content="Your tasks, a click away. A quiet, local-first task board for the Mac menu bar.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/daymark-board.png">
-  <title>Daymark — A little less on your mind.</title>
+  <title>Daymark | A little less on your mind.</title>
   <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/daymark-board.png" as="image">
   <link rel="stylesheet" href="styles.css">
   <script src="site.js" defer></script>
 </head>
@@ -19,39 +21,43 @@
   <div class="page-shell">
     <header class="site-header">
       <a class="brand" href="./" aria-label="Daymark home"><img src="assets/mark.svg" width="31" height="31" alt=""><span>daymark</span></a>
-      <nav aria-label="Main navigation"><a href="#details">The little things</a><a href="https://github.com/Sarfraz-droid/daywork">GitHub <span aria-hidden="true">↗</span></a><a class="nav-download" href="#download">Get Daymark <span aria-hidden="true">↓</span></a></nav>
+      <nav aria-label="Main navigation"><a href="#details">The little things</a><a href="https://github.com/Sarfraz-droid/daywork">GitHub</a><a class="nav-download" href="#download">Get Daymark</a></nav>
     </header>
     <main id="main">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow"><span class="live-dot"></span> A small app for a clearer day</p>
-          <h1 id="hero-title">A little less<br>on your <em>mind.</em></h1>
+          <h1 id="hero-title"><span>A little less</span><span>on your <em>mind.</em></span></h1>
           <p class="hero-description">Catch the thought. Pick the next thing.<br>A quiet task board, right in your Mac’s menu bar.</p>
-          <a class="download-button" href="downloads/Daymark-macOS-arm64.zip" download><svg width="18" height="21" viewBox="0 0 24 28" fill="currentColor" aria-hidden="true"><path d="M18 14c0-3 2-4 3-5-2-3-5-3-6-2-2 1-3 1-5 0-3-1-6 1-7 4-2 5 1 12 4 14 1 1 2 0 4 0s3 1 4 0c2-2 4-5 4-7-1 0-3-2-3-4ZM15 5c1-1 2-3 2-5-2 0-4 1-5 2-1 1-2 3-1 5 1 0 3-1 4-2Z"/></svg>Download for Mac <span aria-hidden="true">↘</span></a>
-          <p class="download-meta">Free · macOS 13+ · Apple silicon</p>
-          <a class="installation-link" href="#install">First time here? Installation notes <span aria-hidden="true">↗</span></a>
+          <div class="hero-actions">
+            <a class="download-button" href="downloads/Daymark-macOS-arm64.zip" download>Download for Mac</a>
+            <a class="installation-link" href="#install">Installation notes</a>
+            <p class="download-meta">Free · macOS 13+ · Apple silicon</p>
+          </div>
         </div>
         <div class="hero-product">
-          <div class="menu-bar" aria-hidden="true"><span class="menu-time">Your Mac. A little calmer.</span><span class="menu-focus"><img src="assets/mark.svg" width="17" height="17" alt=""> Review the onboarding flow</span><span>◒</span></div>
-          <figure class="app-window"><img src="assets/daymark-board.png" width="820" height="600" alt="Daymark’s Mac task board showing example tasks arranged in To do, In progress, and Done columns."><figcaption>Real app. Example tasks. Everything stays on your Mac.</figcaption></figure>
-          <div class="margin-note"><span aria-hidden="true">↖</span> There when you need it.<br><span class="note-indent">Out of the way when you don’t.</span></div>
+          <figure class="app-window">
+            <a class="preview-trigger" href="assets/daymark-board.png" aria-haspopup="dialog" aria-controls="preview-dialog" aria-label="Enlarge the Daymark app preview">
+              <img src="assets/daymark-board.png" width="820" height="600" fetchpriority="high" alt="Daymark’s Mac task board showing example tasks arranged in To do, In progress, and Done columns.">
+            </a>
+            <figcaption><span>Real app. Example tasks.</span><a class="preview-link" href="assets/daymark-board.png" aria-haspopup="dialog" aria-controls="preview-dialog">View larger</a></figcaption>
+          </figure>
         </div>
       </section>
-      <div class="principles" aria-label="Daymark at a glance"><span><i aria-hidden="true">⌘</i> Made for the menu bar</span><span><i aria-hidden="true">↗</i> Three columns. A little momentum.</span><span><i aria-hidden="true">◌</i> Your tasks stay on your Mac</span></div>
+      <div class="principles" aria-label="Daymark at a glance"><span>Made for the menu bar</span><span>Three columns. A little momentum.</span><span>Your tasks stay on your Mac</span></div>
       <section class="details" id="details" aria-labelledby="details-title">
-        <div class="section-intro"><p class="eyebrow">Less managing. More doing.</p><h2 id="details-title">Just enough<br>to move forward.</h2><p>No workspace to set up. No account to remember.<br>Just a place for what’s next.</p></div>
+        <div class="section-intro"><h2 id="details-title">Just enough<br>to move forward.</h2><p>No workspace to set up. No account to remember.<br>Just a place for what’s next.</p></div>
         <div class="detail-list">
-          <article><span class="detail-number">01</span><div><h3>Catch it before it’s gone.</h3><p>A thought, a small errand, the next step. Open your menu bar, type, and press Return. A tiny confetti burst marks the moment.</p><span class="key-hint"><kbd>⌘</kbd><kbd>N</kbd><span>New task, while the board is open</span></span></div></article>
-          <article><span class="detail-number">02</span><div><h3>Give one thing your attention.</h3><p>Drag a task into In progress. Its title follows you into the menu bar, keeping your next step in sight.</p><span class="mini-flow">To do <b>→</b> In progress <b>→</b> Done</span></div></article>
-          <article><span class="detail-number">03</span><div><h3>Keep the useful little things.</h3><p>Priorities, search, quick edits, and undo. Export your tasks when you need a copy. Clear the finished ones when you’re ready for a fresh start.</p><span class="key-hint"><kbd>⌘</kbd><kbd>Z</kbd><span>A little room to change your mind</span></span></div></article>
+          <article><div><h3>Catch it before it’s gone.</h3><p>A thought, a small errand, the next step. Open your menu bar, type, and press Return. A tiny confetti burst marks the moment.</p><span class="key-hint"><kbd>⌘</kbd><kbd>N</kbd><span>New task, while the board is open</span></span></div></article>
+          <article><div><h3>Give one thing your attention.</h3><p>Drag a task into In progress. Its title follows you into the menu bar, keeping your next step in sight.</p><span class="mini-flow">To do <b>→</b> In progress <b>→</b> Done</span></div></article>
+          <article><div><h3>Keep the useful little things.</h3><p>Priorities, search, quick edits, and undo. Export your tasks when you need a copy. Clear the finished ones when you’re ready for a fresh start.</p><span class="key-hint"><kbd>⌘</kbd><kbd>Z</kbd><span>A little room to change your mind</span></span></div></article>
         </div>
       </section>
       <section class="download-section" id="download" aria-labelledby="download-title">
-        <div><p class="eyebrow">A little space for your day</p><h2 id="download-title">Make room for<br>what’s next.</h2><p>Daymark 0.1.0 · Free download for your Mac.</p></div>
-        <div class="download-panel"><img src="assets/mark.svg" alt="" width="44" height="44"><a class="download-button" href="downloads/Daymark-macOS-arm64.zip" download>Download Daymark <span aria-hidden="true">↓</span></a><p>Apple silicon (M1 or later) · macOS 13+</p><a class="checksum" href="downloads/SHA256SUMS.txt">SHA-256 checksum <span aria-hidden="true">↗</span></a><p class="platform-note" id="platform-note" hidden>You can download here, but Daymark runs on a Mac.</p></div>
+        <div><h2 id="download-title">Make room for<br>what’s next.</h2><p>Daymark 0.1.0 · Free download for your Mac.</p></div>
+        <div class="download-panel"><img src="assets/mark.svg" alt="" width="44" height="44"><a class="download-button" href="downloads/Daymark-macOS-arm64.zip" download>Download Daymark</a><p>Apple silicon (M1 or later) · macOS 13+</p><a class="checksum" href="downloads/SHA256SUMS.txt">SHA-256 checksum</a><p class="platform-note" id="platform-note" hidden>You can download here, but Daymark runs on a Mac.</p></div>
       </section>
       <section class="install" id="install" aria-labelledby="install-title">
-        <div><p class="eyebrow">Up and running</p><h2 id="install-title">A few clicks.<br>Then it’s your day.</h2></div>
+        <div><h2 id="install-title" tabindex="-1">A few clicks.<br>Then it’s your day.</h2></div>
         <div class="install-guide">
           <ol><li><strong>Unzip the download.</strong><p>Open the ZIP file, then move Daymark.app to your Applications folder.</p></li><li><strong>Open Daymark.</strong><p>Click the sunrise icon in your Mac’s menu bar. Right-click it for quick actions.</p></li><li><strong>Add your first task.</strong><p>Type what’s on your mind and press Return. Drag it across the board as you go.</p></li></ol>
           <details><summary>Mac showing a developer warning?</summary><p>This early build is ad-hoc signed and has not been notarized by Apple. macOS may block the first launch. Review <a href="https://support.apple.com/102445">Apple’s guidance on opening apps safely</a> before deciding whether to allow it in System Settings → Privacy &amp; Security.</p></details>
@@ -60,8 +66,13 @@
         </div>
       </section>
     </main>
-    <footer><a class="brand" href="./"><img src="assets/mark.svg" width="25" height="25" alt=""><span>daymark</span></a><p>A little space. A clearer day.</p><a href="https://github.com/Sarfraz-droid/daywork">Made for the Mac. View the source <span aria-hidden="true">↗</span></a></footer>
+    <footer><a class="brand" href="./"><img src="assets/mark.svg" width="25" height="25" alt=""><span>daymark</span></a><p>A little space. A clearer day.</p><a href="https://github.com/Sarfraz-droid/daywork">Made for the Mac. View the source</a></footer>
   </div>
-  <div class="download-toast" role="status" aria-live="polite" hidden>Download started. <a href="#install">How to install ↗</a><button type="button" aria-label="Dismiss notification">×</button></div>
+  <dialog id="preview-dialog" aria-labelledby="preview-title">
+    <div class="preview-toolbar"><h2 id="preview-title">A closer look at Daymark</h2><button class="dialog-close" type="button" autofocus>Close preview</button></div>
+    <img src="assets/daymark-board.png" width="820" height="600" alt="Full-size Daymark board with example tasks in To do, In progress, and Done.">
+    <p>Example tasks. Your own tasks are saved on your Mac.</p>
+  </dialog>
+  <div class="download-toast" role="status" aria-live="polite" hidden>Your Mac download was requested. <a href="#install">Installation notes</a><button type="button" aria-label="Dismiss notification">Close</button></div>
 </body>
 </html>
